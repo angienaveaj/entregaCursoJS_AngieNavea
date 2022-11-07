@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Proyecto Carrito: Checkout</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body class="body-checkout">
+<header id="header" class="header">
+    <div class="container">
+        <div class="row">
+            <div class="four columns">
+                <img src="img/tg_logo.png" id="logo">
+            </div>
+        </div> 
+    </div>
+</header>
+
+        <h1 id="encabezado" class="encabezado">Checkout</h1>
+        <div class="bg-white flex justify-center w-70">
+            <div id="resumenCheckout" class="w-33">
+                <a href="index.html" class="link-back"> < Volver a cursos </a>
+                <h4>Resumen de tu compra:</h4>
+                <div id="tablas">
+                </div>
+            </div>
+            <form id="formulario" class="space-y-3 w-100">
+                
+                <div class="flex justify-between">
+                    <div class="flex flex-col w-50 mr-1">
+                        <label for="name" class="font-regular font-medium">Nombre:</label>
+                        <input id="nombre" type="text" name="nombre" placeholder="Nombre" class="border border-gray-300 px-3 py-2 rounded-lg" />
+                    </div>
+                    <div class="flex flex-col w-50 ml-1">
+                        <label for="lastname" class="font-regular font-medium">Apellido:</label>
+                        <input id="apellido" type="text" name="apellido" placeholder="Apellido" class="border border-gray-300 px-3 py-2 rounded-lg" />
+                    </div>
+                </div>
+                
+
+                <div class="flex flex-col space-y-2">
+                    <label for="email" class="font-regular font-medium">Email:</label>
+                    <input id="email" type="email" name="email" placeholder="ej: mkt@empresa.com" class="border border-gray-300 px-3 py-2 rounded-lg"  />
+                </div>
+
+                <div class="flex flex-col space-y-2">
+                    <label for="number" class="font-regular font-medium">Número de tarjeta de crédito:</label>
+                    <input id="credito" type="text" name="credito" placeholder="0000 0000 0000 0000" class="border border-gray-300 px-3 py-2 rounded-lg"  />
+                </div>
+
+                <div class="flex justify-between">
+                    <div class="flex flex-col w-33 mr-1">
+                        <label for="exp" class="font-regular font-medium">Mes:</label>
+                        <!-- <input id="expiracion" type="text" name="asunto" placeholder="Nombre" class="border border-gray-300 px-3 py-2 rounded-lg" /> -->
+                        <div class="flex">
+                            <select name="mes" id="mes" class="w-100">
+                                <option disabled selected>Mes</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="flex flex-col w-33">
+                        <label for="lastname" class="font-regular font-medium">Año:</label>
+                        <div class="flex">
+                            <select name="year" id="year" class="w-100">
+                                <option disabled selected>Año</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="flex flex-col w-33 ml-1">
+                        <label for="ccv" class="font-regular font-medium">CCV:</label>
+                        <input id="ccv" type="text" name="ccv" placeholder="000" class="border border-gray-300 px-3 py-2 rounded-lg" />
+                    </div>
+                </div> <!--cierre div contenedor exp mes y cvv-->
+
+                <div id="botones" class="flex gap-5">
+                    <button id="enviar" type="submit" class="flex-1 bg-pink-600 text-white flex justify-center gap-2 items-center p-3 opacity-50 btn-pagar button-primary button" disabled>
+                        Continuar
+                    </button>
+
+                    <button 
+                        class="flex-1 bg-gray-800 text-white flex justify-center gap-2 items-center p-3 button button-secondary"
+                        type="reset"
+                    >
+
+                        Reset
+                    </button>
+                </div>           
+            </form>
+
+            <div id="spinner" class="flex justify-center hidden contenedor-spinner">
+                <div class="spinner"></div>
+            </div>
+        </div>
+        <!--DIVS-->
+
+    <!-- <script type="module" src="js/stock.js"></script>
+    <script type="module" src="js/obtenerProductos.js"></script>
+    <script type="module" src="js/app.js"></script> -->
+    <script src="js/validacion.js"></script>
+</body>
+</html>
